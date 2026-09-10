@@ -1,0 +1,6 @@
+@EmployeeManagement.WebAPI_HostAddress = http://localhost:5125
+
+GET {{EmployeeManagement.WebAPI_HostAddress}}/employee/
+Accept: application/json
+
+###

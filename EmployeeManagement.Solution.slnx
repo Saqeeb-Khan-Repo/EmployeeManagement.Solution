@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="EmployeeManagement.WebAPI/EmployeeManagement.WebAPI.csproj" />
+  <Project Path="Entities.WebAPI/Entities.WebAPI.csproj" />
+  <Project Path="ServiceContracts.WebAPI/ServiceContracts.WebAPI.csproj" />
+  <Project Path="Services.WebAPI/Services.WebAPI.csproj" />
+</Solution>
