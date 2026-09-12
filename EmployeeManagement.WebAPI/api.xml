@@ -10,6 +10,12 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:EmployeeManagement.WebAPI.Program.Main(System.String[])">
+            <summary>
+            This is the static Main method in Program.cs file
+            </summary>
+            <param name="args"></param>
+        </member>
         <member name="M:Microsoft.AspNetCore.OpenApi.Generated.DocumentationCommentIdHelper.CreateDocumentationId(System.Type)">
             <summary>
             Generates a documentation comment ID for a type.

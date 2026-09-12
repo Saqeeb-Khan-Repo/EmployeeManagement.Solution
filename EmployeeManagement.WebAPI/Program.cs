@@ -1,5 +1,5 @@
 using Entities.WebAPI;
-
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ServiceContracts.WebAPI;
 using Services.WebAPI;
@@ -8,13 +8,23 @@ namespace EmployeeManagement.WebAPI
 {
     public class Program
     {
+        /// <summary>
+        /// This is the static Main method in Program.cs file
+        /// </summary>
+        /// <param name="args"></param>
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
 
-            builder.Services.AddControllers();
+            builder.Services.AddControllers(options =>
+            {
+                //Added in swagger to force only appli/json formate
+                options.Filters.Add(new ProducesAttribute("application/json"));
+                options.Filters.Add(new ConsumesAttribute("application/json"));
+            });
+
             builder.Services.AddOpenApi();
             builder.Services.AddDbContext<ApplicationDBContext>(
                 options =>
@@ -34,7 +44,7 @@ namespace EmployeeManagement.WebAPI
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
-            if (app.Environment.IsDevelopment())
+            if(app.Environment.IsDevelopment())
             {
                 app.MapOpenApi();
             }
@@ -46,9 +56,8 @@ namespace EmployeeManagement.WebAPI
             app.UseHttpsRedirection();
             app.UseAuthorization();
 
-
+            //map controllers routes
             app.MapControllers();
-
             app.Run();
         }
     }
