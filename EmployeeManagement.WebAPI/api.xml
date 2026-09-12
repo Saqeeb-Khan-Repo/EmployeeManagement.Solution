@@ -4,6 +4,11 @@
         <name>EmployeeManagement.WebAPI</name>
     </assembly>
     <members>
+        <member name="T:EmployeeManagement.WebAPI.Controllers.HomeController">
+            <summary>
+            request => HomeController => services => database => response
+            </summary>
+        </member>
         <member name="M:EmployeeManagement.WebAPI.Controllers.HomeController.GetAllEmployee">
             <summary>
             This method Returns All Employees From the "Employees" DB Table

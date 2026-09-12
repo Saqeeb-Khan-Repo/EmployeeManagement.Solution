@@ -4,11 +4,15 @@ using ServiceContracts.WebAPI;
 
 namespace EmployeeManagement.WebAPI.Controllers;
 
+/// <summary>
+/// request => HomeController => services => database => response
+/// </summary>
 [ApiController]
 [Route("api/employees")]
 
 public class HomeController : ControllerBase
 {
+  
     private readonly IEmployeeService _employeeService;
     public HomeController(IEmployeeService employee)
     {
